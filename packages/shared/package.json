@@ -1,0 +1,13 @@
+{
+	"name": "@mono/shared",
+	"version": "0.0.0",
+	"private": true,
+	"types": "src/index.ts",
+	"main": "src/index.ts",
+	"dependencies": {
+		"@sinclair/typebox": "^0.23.5"
+	},
+	"devDependencies": {
+		"typescript": "^4.7.3"
+	}
+}

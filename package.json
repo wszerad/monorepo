@@ -1,0 +1,20 @@
+{
+	"name": "@mono/core",
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "concurrently --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"cd ./packages/server & npm run dev\" \"cd ./packages/client & npm run dev\"",
+		"build": "npm run build --ws",
+		"preview": "npm run preview --ws"
+	},
+	"workspaces": ["./packages/*"],
+	"private": true,
+	"dependencies": {},
+	"devDependencies": {
+		"concurrently": "^7.2.1",
+		"@typescript-eslint/eslint-plugin": "^5.27.1",
+		"@typescript-eslint/parser": "^5.27.1",
+		"@vue/eslint-config-typescript": "^10.0.0",
+		"eslint": "^8.17.0",
+		"eslint-plugin-vue": "^8.7.1"
+	}
+}

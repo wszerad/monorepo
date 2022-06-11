@@ -1,0 +1,38 @@
+{
+	"name": "@mono/server",
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "nodemon ./src/index.ts",
+		"build": "esbuild ./src/index.ts --bundle --platform=node --target=node17.4 --outfile=../../dist/server/index.js --external:./node_modules/*"
+	},
+	"types": "src/index.ts",
+	"main": "src/index.ts",
+	"private": true,
+	"dependencies": {
+		"@mono/shared": "*",
+		"dotenv": "^16.0.1",
+		"fastify": "^4.0.1",
+		"@fastify/type-provider-typebox": "^1.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^17.0.41",
+		"esbuild": "^0.14.43",
+		"tsx": "^3.4.2",
+		"nodemon": "^2.0.16",
+		"typescript": "^4.7.3"
+	},
+	"overrides": {
+		"tsx": {
+			"@esbuild-kit/cjs-loader": "^2.1.0",
+			"@esbuild-kit/esm-loader": "^2.2.0"
+		}
+	},
+	"nodemonConfig": {
+		"watch": [
+			".",
+			"../shared"
+		],
+		"exec": "tsx",
+		"ext": "js,json,ts"
+	}
+}
